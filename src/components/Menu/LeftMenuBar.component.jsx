@@ -1,21 +1,26 @@
 import React from "react";
 import { Layout, Menu, Avatar } from "antd";
 import { UserOutlined } from "@ant-design/icons";
+import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
 const { SubMenu } = Menu;
 
 export default function LeftMenuBar() {
   return (
-    <Sider width={200} height='100%' className="site-layout-background" collapsed>
+    <Sider width={200} height='100%' className="site-layout-background">
       <Menu
         mode="inline"
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
         style={{ height: "100%", borderRight: 0 }}
       >
-        <Menu.Item>Inicio</Menu.Item>
-        <Menu.Item>Area Personal</Menu.Item>
+        <Menu.Item>
+          <Link to="/">Inicio</Link>
+        </Menu.Item>
+        <Menu.Item>
+          <Link to='/my'>Area Personal</Link>
+        </Menu.Item>
         <Menu.Item>Eventos</Menu.Item>
         <SubMenu key="sub1" icon={<UserOutlined />} title="Mis Cursos">
           <Menu.Item key="1">Curso 1</Menu.Item>
