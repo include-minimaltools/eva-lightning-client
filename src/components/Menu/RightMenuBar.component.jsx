@@ -1,10 +1,10 @@
 import React from "react";
-import { Divider, Tree, Layout } from 'antd';
+import { Divider, Tree, Layout, Affix, Button } from 'antd';
 
 const { Sider } = Layout;
 const { DirectoryTree } = Tree;
 
-export default function RightMenuBar() {
+export default function RightMenuBar({ visible }) {
 
   const onSelect = (keys, info) => {
     console.log('Trigger Select', keys, info);
@@ -18,7 +18,7 @@ export default function RightMenuBar() {
 
   return (
     <Sider
-      width={500}
+      width={300}
       height={'100%'}
       style={{ backgroundColor: "white", 
       // backgroundImage: `url(${background2})`, 
@@ -26,7 +26,7 @@ export default function RightMenuBar() {
       backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition:'center' }}
       className="site-layout-background"
       collapsedWidth={0}
-      
+      collapsed = {visible}
     >
       <Divider orientation="left" style={{ color: colorFont }}>Microsoft</Divider>
       <Divider orientation="left" style={{ color: colorFont }}>Navegación</Divider>

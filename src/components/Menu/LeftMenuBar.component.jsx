@@ -1,34 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
 import { Layout, Menu, Avatar } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { UserOutlined, MenuOutlined, HomeOutlined,  } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 const { Sider } = Layout;
-const { SubMenu } = Menu;
+const { SubMenu, Item } = Menu;
 
 export default function LeftMenuBar() {
+  const [isCollapsed, setIsCollapsed] = useState(false)
   return (
-    <Sider width={200} height='100%' className="site-layout-background">
+    <Sider
+      width={200}
+      height="100%"
+      className="site-layout-background"
+      collapsed = {isCollapsed}
+    >
       <Menu
         mode="inline"
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
         style={{ height: "100%", borderRight: 0 }}
       >
-        <Menu.Item>
-          <Link to="/">Inicio</Link>
-        </Menu.Item>
-        <Menu.Item>
-          <Link to='/my'>Area Personal</Link>
-        </Menu.Item>
-        <Menu.Item>Eventos</Menu.Item>
+        <div 
+          style={{ display:'flex', justifyContent: isCollapsed ? 'center' : 'right', padding:'1rem' }}
+          onClick={() => setIsCollapsed(!isCollapsed)}
+        ><MenuOutlined /></div>
+        <Item key='home' icon={<HomeOutlined/> }><Link to='/'>Inicio</Link></Item>
+        <Item key='my' icon={<UserOutlined/>}><Link to='/my'>Area Personal</Link></Item>
+        <Item key='events' icon={<UserOutlined/>}><Link to='/events'>Eventos</Link></Item>
         <SubMenu key="sub1" icon={<UserOutlined />} title="Mis Cursos">
-          <Menu.Item key="1">Curso 1</Menu.Item>
-          <Menu.Item key="2">Curso 2</Menu.Item>
-          <Menu.Item key="3">Curso 3</Menu.Item>
-          <Menu.Item key="4">Curso 4</Menu.Item>
+          <Item key="1" icon={<UserOutlined/>}><Link to='/course/about/1'>Curso 1</Link></Item>
+          <Item key="2" icon={<UserOutlined/>}><Link to='/course/about/1'>Curso 1</Link></Item>
+          <Item key="3" icon={<UserOutlined/>}><Link to='/course/about/1'>Curso 1</Link></Item>
+          <Item key="4" icon={<UserOutlined/>}><Link to='/course/about/1'>Curso 1</Link></Item>
         </SubMenu>
-        <Menu.Item>Somos!</Menu.Item>
+        <Item>Somos!</Item>
       </Menu>
     </Sider>
   );
