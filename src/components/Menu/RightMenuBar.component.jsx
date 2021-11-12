@@ -1,5 +1,7 @@
 import React from "react";
-import { Divider, Tree, Layout, Affix, Button } from 'antd';
+import { Divider, Tree, Layout } from 'antd';
+import MicrosoftBlock from './RightMenuBar/MicrosoftBlock.component' 
+import NextEventsBlock from "./RightMenuBar/NextEventsBlock.component";
 
 const { Sider } = Layout;
 const { DirectoryTree } = Tree;
@@ -28,7 +30,7 @@ export default function RightMenuBar({ visible }) {
       collapsedWidth={0}
       collapsed = {visible}
     >
-      <Divider orientation="left" style={{ color: colorFont }}>Microsoft</Divider>
+      <MicrosoftBlock/>
       <Divider orientation="left" style={{ color: colorFont }}>Navegación</Divider>
       <DirectoryTree
         style={{ background: 'transparent', color: colorFont}}
@@ -43,7 +45,7 @@ export default function RightMenuBar({ visible }) {
       <Divider orientation="left" style={{ color: colorFont }}>Usuarios en línea</Divider>
       <Divider orientation="left" style={{ color: colorFont }}>Insigneas recientes</Divider>
       <Divider orientation="left" style={{ color: colorFont }}>Calendario</Divider>
-      <Divider orientation="left" style={{ color: colorFont }}>Próximos eventos</Divider>
+      <NextEventsBlock/>
     </Sider>
   );
 }
