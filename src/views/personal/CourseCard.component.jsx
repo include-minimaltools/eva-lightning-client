@@ -1,30 +1,29 @@
-import React from "react";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
+import React, { Component } from "react";
+import "./css/SubjectCards.css";
+import images from "../../views/personal/assets/images";
 
-export default function CourseCard({ src, title, text, alt, height, maxWidth, actions, children }) {
-  return <Card sx={{ maxWidth: {maxWidth} }}>
-  <CardMedia
-    component="img"
-    height={height}
-    image={src}
-    alt={alt}
-  />
-  <CardContent>
-    <Typography gutterBottom variant="body1" component="div">
-      {title}
-    </Typography>
-    <Typography variant="body2" color="text.secondary">
-      {text}
-    </Typography>
-    {children}
-  </CardContent>
-  <CardActions>
-    {actions}
-  </CardActions>
-</Card>;
+export default function CourseCard({
+  career,
+  course,
+  group,
+  semester,
+  year, ...props
+}) {
+  function GetRandomint (min, max){
+    return Math.floor(Math.random() * ((max-min) + min))
+  } 
+
+  return (
+    <div style={{ width:'385px'}} {...props}>
+      <section>
+        <article class="post">
+          <img src={images[GetRandomint(1, 5)].img} width="350" height="200" />
+          <p>{career}</p>
+          <h2>
+            {course} - {group} - {semester} - {year}
+          </h2>
+        </article>
+      </section>
+    </div>
+  );
 }
