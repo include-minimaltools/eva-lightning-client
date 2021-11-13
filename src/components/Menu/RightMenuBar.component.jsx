@@ -46,7 +46,7 @@ export default function RightMenuBar(props) {
         Calendario
       </Divider>
       <CalendarBlock />
-      <NextEventsBlock />
+      <NextEventsBlock colorFont={colorFont}/>
     </Sider>
   );
 }
