@@ -4,7 +4,7 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Perfil from "../../../images/Perfil.jpg";
-import Gmail from "../../../images/Gmail.jpg";
+import Gmail from "../../../images/Gmail.png";
 import OneDrive from "../../../images/OneDrive.png";
 import { Fragment } from "react";
 import { Avatar, Col, Divider, Row } from "antd";
@@ -21,7 +21,7 @@ export default function MicrosoftBlock() {
           style={{
             backgroundColor: "transparent",
             color: "white",
-            textAlign: "left",
+            textAlign: "left"
           }}
         >
           <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
@@ -65,4 +65,4 @@ export default function MicrosoftBlock() {
   );
 }
 
-const imageStyle = {padding:'2.5px', background:'white', marginRight:'10px'};
+const imageStyle = {padding:'2.5px', background:'transparent', marginRight:'10px'};
