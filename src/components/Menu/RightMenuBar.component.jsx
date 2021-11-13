@@ -2,6 +2,7 @@ import React from "react";
 import { Divider, Tree, Layout } from 'antd';
 import MicrosoftBlock from './RightMenuBar/MicrosoftBlock.component' 
 import NextEventsBlock from "./RightMenuBar/NextEventsBlock.component";
+import CalendarBlock from "./RightMenuBar/CalendarBlock.component";
 
 const { Sider } = Layout;
 const { DirectoryTree } = Tree;
@@ -15,7 +16,7 @@ export default function RightMenuBar({ visible }) {
   const onExpand = () => {
     console.log('Trigger Expand');
   };
-
+  
   const colorFont = 'white'
 
   return (
@@ -45,6 +46,7 @@ export default function RightMenuBar({ visible }) {
       <Divider orientation="left" style={{ color: colorFont }}>Usuarios en línea</Divider>
       <Divider orientation="left" style={{ color: colorFont }}>Insigneas recientes</Divider>
       <Divider orientation="left" style={{ color: colorFont }}>Calendario</Divider>
+      <CalendarBlock/>
       <NextEventsBlock/>
     </Sider>
   );
