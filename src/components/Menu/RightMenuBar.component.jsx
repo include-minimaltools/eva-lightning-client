@@ -21,7 +21,7 @@ export default function RightMenuBar({ visible }) {
 
   return (
     <Sider
-      width={300}
+      width={'auto'}
       height={'100%'}
       style={{ backgroundColor: "white", 
       // backgroundImage: `url(${background2})`, 

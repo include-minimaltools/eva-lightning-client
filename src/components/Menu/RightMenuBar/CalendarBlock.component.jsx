@@ -12,30 +12,6 @@ import { CalendarOutlined } from "@ant-design/icons";
 export default function CalendarBlock() {
   const [value, setValue] = useState(new Date());
   return (
-    <Accordion>
-      <AccordionSummary>
-        <Divider orientation="left" >
-          <CalendarOutlined style={{ marginRight: "10px" }} />
-          Calendario
-        </Divider>
-      </AccordionSummary>
-      <AccordionDetails>
-        <LocalizationProvider
-          dateAdapter={AdapterDateFns}
-          style={{ background: "transparent" }}
-        >
-          <StaticDatePicker
-            style={{ background: "transparent" }}
-            displayStaticWrapperAs="desktop"
-            openTo="year"
-            value={value}
-            onChange={(newValue) => {
-              setValue(newValue);
-            }}
-            renderInput={(params) => <TextField {...params} />}
-          />
-        </LocalizationProvider>
-      </AccordionDetails>
-    </Accordion>
+    <div></div>
   );
 }
