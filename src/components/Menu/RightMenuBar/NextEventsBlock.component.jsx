@@ -1,14 +1,29 @@
 import React from 'react';
-import { Divider, Tree, Layout } from 'antd';
+import { Divider } from 'antd';
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import { MenuOutlined } from "@ant-design/icons";
 
-const colorFont = 'white'
-
-export default function NextEventsBlock() {
+export default function NextEventsBlock({colorFont}) {
     return (
-        <div>
-            <Divider orientation="left" style={{ color: colorFont }}>≡ Próximos eventos</Divider>
+            <Accordion
+                 style={{
+                backgroundColor: "transparent",
+                color: "white",
+                textAlign: "left"}}
+            >
+            <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
+                <Divider orientation="left" style={{ color: colorFont }}>
+                    <MenuOutlined style={{ marginRight: "10px" }} />
+                    Próximos eventos
+                </Divider>
+            </AccordionSummary>
 
-            <h1 style={{color:'white', position: 'relative', left:50}}>No hay eventos proximos</h1>
-        </div>
+            <AccordionDetails style={{ marginLeft:'50px'}}>
+                <Typography>No hay eventos proximos</Typography>
+          </AccordionDetails>
+            </Accordion>
     )
 }

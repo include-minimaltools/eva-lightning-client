@@ -21,7 +21,7 @@ export default function RightMenuBar({ visible }) {
 
   return (
     <Sider
-      width={'auto'}
+      width={'350'}
       height={'100%'}
       style={{ backgroundColor: "white", 
       // backgroundImage: `url(${background2})`, 
@@ -47,7 +47,7 @@ export default function RightMenuBar({ visible }) {
       <Divider orientation="left" style={{ color: colorFont }}>Insigneas recientes</Divider>
       <Divider orientation="left" style={{ color: colorFont }}>Calendario</Divider>
       <CalendarBlock/>
-      <NextEventsBlock/>
+      <NextEventsBlock colorFont={colorFont}/>
     </Sider>
   );
 }
