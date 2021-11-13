@@ -4,6 +4,7 @@ import MicrosoftBlock from "./RightMenuBar/MicrosoftBlock.component";
 import NextEventsBlock from "./RightMenuBar/NextEventsBlock.component";
 import CalendarBlock from "./RightMenuBar/CalendarBlock.component";
 import NavigationBlock from "./RightMenuBar/NavigationBlock.component";
+import UserOnlineBlock from "./RightMenuBar/UserOnLineBlock.component";
 
 const { Sider } = Layout;
 
@@ -16,9 +17,11 @@ export default function RightMenuBar(props) {
       width={"350px"}
       height={"100%"}
       style={{
+        borderTopLeftRadius:'15px',
+        borderBottomLeftRadius:'15px',
         backgroundColor: "#003792",
         // backgroundImage: `url(${background2})`,
-        // backgroundImage: `url(https://lalupa.press/wp-content/uploads/2020/05/UNI.jpeg)`,
+        backgroundImage: `url(https://lalupa.press/wp-content/uploads/2020/05/UNI.jpeg)`,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
@@ -35,9 +38,7 @@ export default function RightMenuBar(props) {
       <Divider orientation="left" style={{ color: colorFont }}>
         Archivos Privados
       </Divider>
-      <Divider orientation="left" style={{ color: colorFont }}>
-        Usuarios en línea
-      </Divider>
+      <UserOnlineBlock />
       <Divider orientation="left" style={{ color: colorFont }}>
         Insigneas recientes
       </Divider>
