@@ -14,9 +14,14 @@ const { Item } = Breadcrumb;
 function Interface({ children }) {
   const [isVisibleRightBar, setIsVisibleRightBar] = useState(false);
 
+  const toggleRightBar = () => {
+    console.log("toggleRightBar", isVisibleRightBar);
+    setIsVisibleRightBar(!isVisibleRightBar)
+  };
+
   return (
     <Layout>
-      <TopMenuBar rightMenu={() => setIsVisibleRightBar(!isVisibleRightBar)}/>
+      <TopMenuBar rightMenu={toggleRightBar}/>
       <Layout style={{ height: "max" }}>
         <LeftMenuBar />
         <Layout style={{ height: "100%", padding: "0 24px 24px" }}>
@@ -34,7 +39,7 @@ function Interface({ children }) {
             Eva Lightning ©2021 Created by Minimal Tools Team
           </Footer>
         </Layout>
-        <RightMenuBar visible={isVisibleRightBar} />
+        <RightMenuBar collapsed={!isVisibleRightBar}/>
       </Layout>
     </Layout>
   );
