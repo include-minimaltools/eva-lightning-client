@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useRoutes } from 'react-router-dom';
 
 import Interface from './components/Interface.container';
-import CourseAbout from './views/course/about/CourseAbout.component';
+import BrandContainer from './views/brands/Brand.container';
 import CourseContainer from './views/course/Course.containter';
 import CourseCardContainer from './views/personal/CourseCard.container';
 
@@ -12,6 +12,16 @@ const { Content } = Layout;
 
 export default function Routes() {
   const routes = useRoutes([
+    {
+      path: '/', element: <Interface>
+        <CourseCardContainer />
+      </Interface>
+    },
+    {
+      path: '/brands', element: <Interface>
+        <BrandContainer/>
+      </Interface>
+    },
     {
       path: '/my', element: <Interface>
         <CourseCardContainer />
