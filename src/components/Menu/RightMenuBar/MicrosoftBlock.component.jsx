@@ -8,7 +8,13 @@ import Gmail from "../../../images/Gmail.png";
 import OneDrive from "../../../images/OneDrive.png";
 import { Fragment } from "react";
 import { Avatar, Col, Divider, Row } from "antd";
-import { MenuOutlined } from "@ant-design/icons";
+import {
+  CloudFilled,
+  CloudOutlined,
+  MailFilled,
+  MailOutlined,
+  MenuOutlined,
+} from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 const colorFont = "white";
@@ -21,7 +27,7 @@ export default function MicrosoftBlock() {
           style={{
             backgroundColor: "transparent",
             color: "white",
-            textAlign: "left"
+            textAlign: "left",
           }}
         >
           <AccordionSummary aria-controls="panel1a-content" id="panel1a-header">
@@ -35,28 +41,49 @@ export default function MicrosoftBlock() {
             <Row justify="center">
               <Avatar alt="Perfil" src={Perfil} size={100} />
             </Row>
-            <Row style={{ marginBottom:'30px'}}>
-              <Typography>
-                Obed Miguel You are currently CONNECTED to Microsoft 365
-              </Typography>
+            <Row style={{ marginBottom: "30px" }} gutter={[10,0]} justify="center">
+              <Col>
+                <Typography>Obed Miguel You are currently</Typography>
+              </Col>
+              <Col>
+                <Typography style={{ color: "green" }}>CONNECTED</Typography>
+              </Col>
+              <Col><Typography>to Microsoft 365</Typography></Col>
             </Row>
 
-            <Row style={{ marginBottom:'10px'}}>
-              <Link
-                target="_blank"
-                to="https://mail.google.com/mail/u/0"
-                style={{ color: "white", position: "relative", left: 10}}
-              ><Avatar shape="square" alt="Logo gmail" icon={<img src={Gmail}/>} size={30} style={imageStyle}/>My Email</Link>
+            <Row
+              gutter={[16, 0]}
+              style={{
+                marginBottom: "10px",
+                cursor: "pointer",
+                color: "white",
+              }}
+              onClick={() => {
+                window.open("https://mail.google.com/mail/u/0");
+              }}
+            >
+              <Col>
+                <MailFilled style={{ fontSize: "27px" }} />
+              </Col>
+              <Col style={{ alignItems: "center", display: "flex" }}>
+                <div>My Email</div>
+              </Col>
             </Row>
-            <Row>
-              <Link
-                target="_blank"
-                to="https://onedrive.live.com/about/en-us/signin/"
-                style={{ color: "white", position: "relative", left: 10 }}
-              >
-              <Avatar shape="square" alt="Logo gmail" icon={<img src={OneDrive}/>} size={30} style={imageStyle}/>
-                My OneDrive
-              </Link>
+            <Row
+              gutter={[16, 0]}
+              style={{
+                marginBottom: "10px",
+                cursor: "pointer",
+                color: "white",
+              }}
+              onClick={() => window.open("https://onedrive.live.com/")}
+            >
+              <Col>
+                <CloudFilled style={{ fontSize: "30px" }} />
+              </Col>
+              <Col style={{ alignItems: "center", display: "flex" }}>
+                <div>My OneDrive</div>
+              </Col>
             </Row>
           </AccordionDetails>
         </Accordion>
@@ -65,4 +92,8 @@ export default function MicrosoftBlock() {
   );
 }
 
-const imageStyle = {padding:'2.5px', background:'transparent', marginRight:'10px'};
+const imageStyle = {
+  padding: "2.5px",
+  background: "transparent",
+  marginRight: "10px",
+};

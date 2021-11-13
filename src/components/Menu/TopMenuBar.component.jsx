@@ -4,7 +4,7 @@ import { UserOutlined, MessageFilled, BellFilled } from "@ant-design/icons";
 
 import logo from '../../images/logoUNI.png';
 import background from '../../images/RLP-background.png';
-import { MenuOutlined } from "@mui/icons-material";
+import { ImageOutlined, MenuOutlined } from "@mui/icons-material";
 
 const { Header } = Layout;
 const { Text } = Typography;
@@ -15,7 +15,7 @@ const leftElementsStyle = {
   display: "flex" 
 }
 
-export default function TopMenuBar({ rightMenu }) {
+export default function TopMenuBar({ rightMenu, imageRightMenu }) {
   return (
     <Header
       className="header"
@@ -51,7 +51,8 @@ export default function TopMenuBar({ rightMenu }) {
             align="bottom"
             gutter={[15, 0]}
           >
-            <MenuOutlined style={{ fontSize: "25px", color: "white" }} onClick={rightMenu} />
+              <MenuOutlined style={{ fontSize: "30px", color: "white", marginRight:'10px' }} onClick={rightMenu} />
+              <ImageOutlined style={{ fontSize: "30px", color: "white" }} onClick={imageRightMenu}/>
           </Row>
         </Col>
       </Row>

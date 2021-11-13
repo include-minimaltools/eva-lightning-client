@@ -9,7 +9,7 @@ import UserOnlineBlock from "./RightMenuBar/UserOnLineBlock.component";
 const { Sider } = Layout;
 
 
-export default function RightMenuBar(props) {
+export default function RightMenuBar({isImageRightBar ,...props}) {
   const colorFont = "white";
 
   return (
@@ -21,7 +21,7 @@ export default function RightMenuBar(props) {
         borderBottomLeftRadius:'15px',
         backgroundColor: "#003792",
         // backgroundImage: `url(${background2})`,
-        backgroundImage: `url(https://lalupa.press/wp-content/uploads/2020/05/UNI.jpeg)`,
+        backgroundImage: isImageRightBar ? `url(https://lalupa.press/wp-content/uploads/2020/05/UNI.jpeg)` : null,
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
