@@ -26,7 +26,6 @@ export default function RightMenuBar(props) {
         backgroundRepeat: "no-repeat",
         backgroundPosition: "center",
       }}
-      // className="site-layout-background"
       collapsedWidth={0}
       {...props}
     >

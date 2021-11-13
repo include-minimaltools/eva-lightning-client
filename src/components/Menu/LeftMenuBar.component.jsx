@@ -28,7 +28,7 @@ export default function LeftMenuBar() {
         mode="inline"
         defaultSelectedKeys={["1"]}
         defaultOpenKeys={["sub1"]}
-        style={{ height: "100%",  borderTopRightRadius: "15px", borderBottomRightRadius: "10px",  }}
+        style={{ height: "100%",  borderTopRightRadius: "15px", borderBottomRightRadius: "15px",  }}
       >
         <div
           style={{

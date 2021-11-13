@@ -22,9 +22,9 @@ function Interface({ children }) {
   return (
     <Layout>
       <TopMenuBar rightMenu={toggleRightBar}/>
-      <Layout style={{ height: "max" }}>
+      <Layout style={{ height: "max", background:'#F5F0F3' }}>
         <LeftMenuBar />
-        <Layout style={{ height: "100%", padding: "0 24px 24px" }}>
+        <Layout style={{ height: "100%", padding: "0 24px 24px"}}>
           <Breadcrumb style={{ margin: "16px 0" }}>
             <Item>Home</Item>
             <Item>List</Item>

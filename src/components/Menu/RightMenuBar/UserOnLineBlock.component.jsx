@@ -32,10 +32,11 @@ export default function UserOnlineBlock() {
           </AccordionSummary>
 
           <AccordionDetails>
-            {[1, 2, 3].map((item) => (<Row style={{ marginBottom: "10px" }}>
+            {names.map((item) => (<Row style={{ marginBottom: "10px" }}>
                 <Badge count={1} style={{ backgroundColor: "#52c41a", color:"#52c41a"}} size='small' offset={[-3,5]}>
                   <Avatar style={{background:'white'}} alt="Perfil" src='https://joeschmoe.io/api/v1/random' size={30} />
                 </Badge>
+                <p style={{color:'white', marginLeft:'15px'}}>{item.name} {item.lastName}</p>
               </Row>
             ))}
           </AccordionDetails>
@@ -44,3 +45,9 @@ export default function UserOnlineBlock() {
     </Fragment>
   );
 }
+
+const names = [
+  { name: 'Gabriel', lastName: 'Gonzalez' },
+  { name: 'Lister', lastName: 'Ramirez' },
+  { name: 'Capei', lastName: 'Gomez' },
+]
