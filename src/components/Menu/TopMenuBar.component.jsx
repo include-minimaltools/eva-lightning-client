@@ -51,8 +51,8 @@ export default function TopMenuBar({ rightMenu, imageRightMenu }) {
             align="bottom"
             gutter={[15, 0]}
           >
-              <MenuOutlined style={{ fontSize: "30px", color: "white", marginRight:'10px' }} onClick={rightMenu} />
-              <ImageOutlined style={{ fontSize: "30px", color: "white" }} onClick={imageRightMenu}/>
+              <MenuOutlined style={{ fontSize: "28px", color: "white", marginRight:'20px' }} onClick={rightMenu} />
+              <ImageOutlined style={{ fontSize: "28px", color: "white" }} onClick={imageRightMenu}/>
           </Row>
         </Col>
       </Row>

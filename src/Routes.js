@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useRoutes } from 'react-router-dom';
 
 import Interface from './components/Interface.container';
+import AboutUs from './views/about/AboutUs.component';
 import BrandContainer from './views/brands/Brand.container';
 import CourseContainer from './views/course/Course.containter';
 import CourseCardContainer from './views/personal/CourseCard.container';
@@ -20,6 +21,11 @@ export default function Routes() {
     {
       path: '/brands', element: <Interface>
         <BrandContainer/>
+      </Interface>
+    },
+    {
+      path: '/aboutus', element: <Interface>
+        <AboutUs/>
       </Interface>
     },
     {
