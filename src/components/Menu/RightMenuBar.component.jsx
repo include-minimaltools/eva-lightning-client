@@ -1,5 +1,8 @@
 import React from "react";
 import { Divider, Tree, Layout } from 'antd';
+import AcorddionM from './Mycomponent/RightTimeLine.component';
+import AcorddionCalendar from "./Mycomponent/RighCalendar.component";
+import AcorddionRecentBadges from "./Mycomponent/RecentBadges.componet";
 
 const { Sider } = Layout;
 const { DirectoryTree } = Tree;
@@ -21,14 +24,14 @@ export default function RightMenuBar() {
       width={500}
       height={'100%'}
       style={{ backgroundColor: "white", 
-      // backgroundImage: `url(${background2})`, 
+      //backgroundImage: `url(${background2})`, 
       backgroundImage: `url(https://lalupa.press/wp-content/uploads/2020/05/UNI.jpeg)`,
       backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition:'center' }}
       className="site-layout-background"
       collapsedWidth={0}
       
     >
-      <Divider orientation="left" style={{ color: colorFont }}>Microsoft</Divider>
+      <Divider orientation="left" style={{ color: colorFont }}>≡ Microsoft</Divider>
       <Divider orientation="left" style={{ color: colorFont }}>Navegación</Divider>
       <DirectoryTree
         style={{ background: 'transparent', color: colorFont}}
@@ -38,11 +41,11 @@ export default function RightMenuBar() {
         onExpand={onExpand}
         treeData={treeData}
       />
-      <Divider orientation="left" style={{ color: colorFont }}>Línea de Tiempo</Divider>
+      <AcorddionM/>
       <Divider orientation="left" style={{ color: colorFont }}>Archivos Privados</Divider>
       <Divider orientation="left" style={{ color: colorFont }}>Usuarios en línea</Divider>
-      <Divider orientation="left" style={{ color: colorFont }}>Insigneas recientes</Divider>
-      <Divider orientation="left" style={{ color: colorFont }}>Calendario</Divider>
+      <AcorddionRecentBadges/>
+      <AcorddionCalendar/>
       <Divider orientation="left" style={{ color: colorFont }}>Próximos eventos</Divider>
     </Sider>
   );
