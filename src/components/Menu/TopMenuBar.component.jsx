@@ -4,6 +4,7 @@ import { UserOutlined, MessageFilled, BellFilled } from "@ant-design/icons";
 
 import logo from '../../images/logoUNI.png';
 import background from '../../images/RLP-background.png';
+import { ImageOutlined, MenuOutlined } from "@mui/icons-material";
 
 const { Header } = Layout;
 const { Text } = Typography;
@@ -14,7 +15,7 @@ const leftElementsStyle = {
   display: "flex" 
 }
 
-export default function TopMenuBar() {
+export default function TopMenuBar({ rightMenu, imageRightMenu }) {
   return (
     <Header
       className="header"
@@ -28,7 +29,7 @@ export default function TopMenuBar() {
             <img src={logo}></img>
           </div>
         </Col>
-        <Col flex="auto" style={{ justifyContent: "end", display: "flex" }}>
+        <Col flex="auto">
           <Row
             justify="end"
             align="top"
@@ -44,6 +45,14 @@ export default function TopMenuBar() {
               <Text style={{ color: "white" }}>Obed Miguel Reyes Amador</Text>
             </Col>
             <Avatar icon={<UserOutlined />} style={{ margin: "5px" }} />
+          </Row>
+          <Row
+            justify="end"
+            align="bottom"
+            gutter={[15, 0]}
+          >
+              <MenuOutlined style={{ fontSize: "28px", color: "white", marginRight:'20px' }} onClick={rightMenu} />
+              <ImageOutlined style={{ fontSize: "28px", color: "white" }} onClick={imageRightMenu}/>
           </Row>
         </Col>
       </Row>

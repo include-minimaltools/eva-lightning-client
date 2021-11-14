@@ -1,96 +1,52 @@
 import React from "react";
-import { Divider, Tree, Layout } from 'antd';
-import AcorddionM from './Mycomponent/RightTimeLine.component';
-import AcorddionCalendar from "./Mycomponent/RighCalendar.component";
-import AcorddionRecentBadges from "./Mycomponent/RecentBadges.componet";
+import { Divider, Tree, Layout } from "antd";
+import MicrosoftBlock from "./RightMenuBar/MicrosoftBlock.component";
+import NextEventsBlock from "./RightMenuBar/NextEventsBlock.component";
+import CalendarBlock from "./RightMenuBar/CalendarBlock.component";
+import NavigationBlock from "./RightMenuBar/NavigationBlock.component";
+import UserOnlineBlock from "./RightMenuBar/UserOnLineBlock.component";
 
 const { Sider } = Layout;
-const { DirectoryTree } = Tree;
 
-export default function RightMenuBar() {
 
-  const onSelect = (keys, info) => {
-    console.log('Trigger Select', keys, info);
-  };
-
-  const onExpand = () => {
-    console.log('Trigger Expand');
-  };
-
-  const colorFont = 'white'
+export default function RightMenuBar({isImageRightBar ,...props}) {
+  const colorFont = "white";
 
   return (
     <Sider
-      width={500}
-      height={'100%'}
-      style={{ backgroundColor: "white", 
-      //backgroundImage: `url(${background2})`, 
-      backgroundImage: `url(https://lalupa.press/wp-content/uploads/2020/05/UNI.jpeg)`,
-      backgroundSize: "cover", backgroundRepeat: "no-repeat", backgroundPosition:'center' }}
-      className="site-layout-background"
+      width={"350px"}
+      height={"100%"}
+      style={{
+        borderTopLeftRadius:'15px',
+        borderBottomLeftRadius:'15px',
+        backgroundColor: "#003792",
+        // backgroundImage: `url(${background2})`,
+        backgroundImage: isImageRightBar ? `url(https://lalupa.press/wp-content/uploads/2020/05/UNI.jpeg)` : null,
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+      }}
       collapsedWidth={0}
-      
+      {...props}
     >
-      <Divider orientation="left" style={{ color: colorFont }}>≡ Microsoft</Divider>
-      <Divider orientation="left" style={{ color: colorFont }}>Navegación</Divider>
-      <DirectoryTree
-        style={{ background: 'transparent', color: colorFont}}
-        multiple
-        defaultExpandAll
-        onSelect={onSelect}
-        onExpand={onExpand}
-        treeData={treeData}
-      />
-      <AcorddionM/>
-      <Divider orientation="left" style={{ color: colorFont }}>Archivos Privados</Divider>
-      <Divider orientation="left" style={{ color: colorFont }}>Usuarios en línea</Divider>
-      <AcorddionRecentBadges/>
-      <AcorddionCalendar/>
-      <Divider orientation="left" style={{ color: colorFont }}>Próximos eventos</Divider>
+      <MicrosoftBlock />
+      <NavigationBlock colorFont={colorFont} />
+      <Divider orientation="left" style={{ color: colorFont }}>
+        Línea de Tiempo
+      </Divider>
+      <Divider orientation="left" style={{ color: colorFont }}>
+        Archivos Privados
+      </Divider>
+      <UserOnlineBlock />
+      <Divider orientation="left" style={{ color: colorFont }}>
+        Insigneas recientes
+      </Divider>
+      <Divider orientation="left" style={{ color: colorFont }}>
+        Calendario
+      </Divider>
+      <CalendarBlock />
+      <NextEventsBlock colorFont={colorFont}/>
     </Sider>
   );
 }
 
-// Datos de prueba
-const treeData = [
-  {
-    title: 'Area personal',
-    key: '0-0',
-  },
-  {
-    title: 'Inicio del sitio',
-    key: '0-1',
-  },
-  {
-    title: 'Paginas del sitio',
-    key: '0-2',
-    children: [
-      {
-        title: 'Página x',
-        key: '0-2-0',
-        isLeaf: true,
-      },
-      {
-        title: 'Página y',
-        key: '0-2-1',
-        isLeaf: true,
-      },
-    ],
-  },
-  {
-    title: 'Mis cursos',
-    key: '0-3',
-    children: [
-      {
-        title: 'Curso x',
-        key: '0-3-0',
-        isLeaf: true,
-      },
-      {
-        title: 'Curso y',
-        key: '0-3-1',
-        isLeaf: true,
-      },
-    ],
-  },
-];
