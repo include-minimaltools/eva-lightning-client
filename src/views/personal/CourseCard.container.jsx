@@ -24,46 +24,10 @@ const data = [
     group: "Grupo 1",
     semester: "Semestre 1",
     year: "Año 1",
-  },
-  {
-    carrer: "Ingeniería en Quimica",
-    course: "Geometria",
-    group: "Grupo 1",
-    semester: "Semestre 1",
-    year: "Año 1",
-  },
-  {
-    carrer: "Ingeniería en Quimica",
-    course: "Geometria",
-    group: "Grupo 1",
-    semester: "Semestre 1",
-    year: "Año 1",
-  },
-  {
-    carrer: "Ingeniería en Quimica",
-    course: "Geometria",
-    group: "Grupo 1",
-    semester: "Semestre 1",
-    year: "Año 1",
-  },
-  {
-    carrer: "Ingeniería en Quimica",
-    course: "Geometria",
-    group: "Grupo 1",
-    semester: "Semestre 1",
-    year: "Año 1",
-  },
-  {
-    carrer: "Ingeniería en Quimica",
-    course: "Geometria",
-    group: "Grupo 1",
-    semester: "Semestre 1",
-    year: "Año 1",
-  },
+  }
 ]
 
 export default function CourseCardContainer() {
-  const Course= ["Matemáticas III", "Física", "AED"];
   return (<div style={{ background:'white', borderRadius:'10px', padding:'8px 0 4px 8px', width:'max', justifyContent:'center'}}>
     <Row>
       <h2>Cursos a los que se ha accedido recientemente</h2>
