@@ -4,8 +4,6 @@ import AccordionSummary from "@mui/material/AccordionSummary";
 import AccordionDetails from "@mui/material/AccordionDetails";
 import Typography from "@mui/material/Typography";
 import Perfil from "../../../images/Perfil.jpg";
-import Gmail from "../../../images/Gmail.png";
-import OneDrive from "../../../images/OneDrive.png";
 import { Fragment } from "react";
 import { Avatar, Col, Divider, Row } from "antd";
 import {

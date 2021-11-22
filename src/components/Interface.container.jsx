@@ -16,19 +16,17 @@ function Interface({ children }) {
   const [isImageRightBar, setIsImageRightBar] = useState(false);
 
   return (
-    <Layout>
+    <Layout style={{height:'100%'}}>
       <TopMenuBar rightMenu={() => setIsVisibleRightBar(!isVisibleRightBar)} imageRightMenu={() => setIsImageRightBar(!isImageRightBar)}/>
-      <Layout style={{ height: "max", background:'#F5F0F3' }}>
+      <Layout style={{height:'100%', background:'#F5F0F3' }}>
         <LeftMenuBar />
-        <Layout style={{ height: "100%", padding: "0 24px 24px"}}>
+        <Layout style={{height:'100%', padding: "0 24px 24px"}}>
           <Breadcrumb style={{ margin: "16px 0" }}>
             <Item>Home</Item>
             <Item>List</Item>
             <Item>App</Item>
           </Breadcrumb>
-          <Content 
-            style={{minHeight:"760px"}}
-          >
+          <Content style={{ height:'100%', width:'100%', overflowY:'scroll'}}>
             {children}
           </Content>
           <Footer style={{ textAlign: "center" }}>

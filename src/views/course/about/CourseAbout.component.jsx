@@ -3,7 +3,6 @@ import { Card } from "antd";
 import { InfoCircleOutlined, EyeOutlined } from "@ant-design/icons";
 import { Table } from 'antd';
 import PersonIcon from '@mui/icons-material/Person';
-import AboutCourseBackground from "../../../images/svgs/AboutCourseBackground";
 
 
 export default function CourseAbout() {
@@ -220,7 +219,7 @@ export default function CourseAbout() {
           title={() => <h4>{CourseName}</h4>}
         />
       </div>
-      {/*     <AboutCourseBackground/> */}
+          {/* <AboutCourseBackground/> */}
 
 
 
